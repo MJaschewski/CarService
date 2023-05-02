@@ -15,8 +15,7 @@ public class CarService {
 
     public Car addCar(Car car){
         car.setId(UUID.randomUUID());
-        carRepository.addCar(car);
-        return car;
+        return carRepository.addCar(car);
     }
 
     public Car getCar(UUID carID){
@@ -24,8 +23,7 @@ public class CarService {
     }
 
     public Car removeCar(UUID carID){
-        Car deletedCar = carRepository.removeCar(carID);
-        return deletedCar;
+        return carRepository.removeCar(carID);
     }
 
     public List<Car> getCars(){

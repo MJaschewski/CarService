@@ -44,11 +44,7 @@ public class CarRepository {
     }
 
     public List<Car> getCars(){
-        List<Car> carList = new ArrayList<>();
-        for (Car cars : carRepository.values()){
-            carList.add(cars);
-        }
-        return carList;
+        return new ArrayList<>(carRepository.values());
     }
 
     @Override

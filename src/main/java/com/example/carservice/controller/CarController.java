@@ -14,8 +14,7 @@ public class CarController {
 
     @PostMapping("car/post")
     public Car addCar(@RequestBody Car car){
-        carService.addCar(car);
-        return car;
+        return carService.addCar(car);
     }
 
     @GetMapping("car/get")
@@ -32,8 +31,7 @@ public class CarController {
        carService.getCar(carID).setManufacturer(car.getManufacturer());
        carService.getCar(carID).setNumberOfWheels(car.getNumberOfWheels());
        carService.getCar(carID).setCertificate(car.isCertificate());
-       Car carOld = carService.getCar(carID);
 
-       return carOld;
+        return carService.getCar(carID);
     }
 }

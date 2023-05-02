@@ -12,13 +12,13 @@ import java.util.UUID;
 public class CarController {
     private CarService carService = new CarService();
 
-    @PostMapping("car")
+    @PostMapping("car/post")
     public Car addCar(@RequestBody Car car){
         carService.addCar(car);
         return car;
     }
 
-    @GetMapping("car")
+    @GetMapping("car/get")
     public List<Car> getCars(){
         return carService.getCars();
     }

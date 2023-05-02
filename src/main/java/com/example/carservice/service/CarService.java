@@ -19,6 +19,15 @@ public class CarService {
         return car;
     }
 
+    public Car getCar(UUID carID){
+        return carRepository.getCar(carID);
+    }
+
+    public Car removeCar(UUID carID){
+        Car deletedCar = carRepository.removeCar(carID);
+        return deletedCar;
+    }
+
     public List<Car> getCars(){
         return carRepository.getCars();
     }

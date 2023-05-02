@@ -19,6 +19,30 @@ public class CarRepository {
         return carRepository.get(car.getId());
     }
 
+    public Car getCar(UUID carID){
+        Car car = new Car();
+        if(carRepository.containsKey(carID)){
+            car = carRepository.get(carID);
+        }
+        else {
+            System.out.println("No car with such an ID found");
+        }
+        return car;
+    }
+
+    public Car removeCar(UUID carID){
+        Car deletedCar = new Car();
+        if(carRepository.containsKey(carID)){
+            deletedCar = carRepository.get(carID);
+            carRepository.remove(carID);
+            System.out.println("Removed car with ID " + carID);
+        }
+        else {
+            System.out.println("No car with such an ID found");
+        }
+        return deletedCar;
+    }
+
     public List<Car> getCars(){
         List<Car> carList = new ArrayList<>();
         for (Car cars : carRepository.values()){
